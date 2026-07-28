@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+.env
+.env.*
+
+.DS_Store
+.vscode/
+.idea/
+
+# Hasil unduhan dari app yang tertinggal di root — bukan bagian dari repo.
+# Hasil resmi yang ikut di-commit ada di data/hasil_clustering_2025_tahunan.xlsx.
+/hasil_clustering_*.xlsx

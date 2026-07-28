@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "lib": ["esnext", "dom"],
+    "target": "esnext",
+    // checkJs sengaja dimatikan: src/components/ui adalah kode shadcn pihak
+    // ketiga tanpa tipe prop, dan `exclude` tidak menolongnya karena file yang
+    // diimpor tetap ikut diperiksa (~200 error palsu). Editor tetap dapat
+    // IntelliSense dari `paths` di bawah. Penjagaan yang benar-benar berguna —
+    // memastikan tiap impor `@/...` menunjuk file yang ada — dilakukan
+    // `npm run check:imports` (lihat scripts/check-imports.mjs).
+    "checkJs": false,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "types": ["vite/client"]
+  },
+  // Sebelumnya include menunjuk folder yang salah nama ("src/components/**/*.js"
+  // padahal file-nya .jsx) dan file yang tidak ada (src/Layout.jsx), sementara
+  // src/lib justru di-exclude — sehingga `npm run typecheck` praktis tidak
+  // memeriksa apa pun. src/components/ui tetap dikecualikan karena itu kode
+  // shadcn pihak ketiga.
+  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "dist", "src/components/ui"]
+}

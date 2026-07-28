@@ -1,0 +1,23 @@
+# Versi di-pin agar hasil clustering reproducible.
+# Perubahan default scikit-learn antar-versi bisa menggeser angka Silhouette,
+# dan angka itu dikutip di naskah skripsi — jadi jangan dilonggarkan.
+pandas==2.3.3
+numpy==2.0.2
+scikit-learn==1.6.1
+openpyxl==3.1.5
+
+# Web service
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+python-multipart==0.0.20
+pydantic-settings==2.7.0
+email-validator==2.2.0
+
+# Database
+sqlalchemy==2.0.36
+psycopg[binary]==3.2.4
+alembic==1.14.0
+
+# Autentikasi
+pyjwt==2.10.1
+bcrypt==4.2.1

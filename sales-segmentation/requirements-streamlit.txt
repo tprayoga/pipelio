@@ -1,0 +1,6 @@
+-r requirements.txt
+
+# Hanya untuk app Streamlit (demo sidang / alat internal). Sengaja dipisah
+# supaya image backend produksi tidak ikut memuat Streamlit.
+streamlit==1.50.0
+plotly==6.9.0
